@@ -13,7 +13,7 @@ HIVE_VERSION=2.3.3
 HBASE_VERSION=1.4.8
 
 # spark
-SPARK_VERSION=spark-2.3.0
+SPARK_VERSION=spark-3.1.2
 
 
 # sqoop 
