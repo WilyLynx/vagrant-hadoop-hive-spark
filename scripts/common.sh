@@ -6,7 +6,7 @@
 source "/vagrant/scripts/versions.sh"
 
 # Curl options
-CURL_OPTS="-Ss --retry 10 "
+CURL_OPTS="-Ss --retry 10 -#"
 
 # java
 JAVA_ARCHIVE=jdk-8u51-linux-x64.gz
@@ -91,6 +91,19 @@ ZEPPELIN_ARCHIVE=${ZEPPELIN_RELEASE}.tgz
 ZEPPELIN_MIRROR_DOWNLOAD=http://www-eu.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/${ZEPPELIN_ARCHIVE}
 ZEPPELIN_RES_DIR=/vagrant/resources/zeppelin
 ZEPPELIN_TARGET=/home/ubuntu
+
+# NiFi
+NIFI_RELEASE=nifi-${NIFI_VERSION}-bin
+NIFI_ARCHIVE=${NIFI_RELEASE}.tar.gz
+NIFI_MIRROR_DOWNLOAD=https://downloads.apache.org/nifi/${NIFI_VERSION}/${NIFI_ARCHIVE}
+NIFI_RES_DIR=/vagrant/resources/nifi
+NIFI_HOME=/usr/local/nifi
+NIFI_CONF=${NIFI_HOME}/conf
+
+NIFI_TOOLKIT_RELEASE=nifi-toolkit-${NIFI_VERSION}-bin
+NIFI_TOOLKIT_ARCHIVE=${NIFI_TOOLKIT_RELEASE}.tar.gz
+NIFI_TOOLKIT_MIRROR_DOWNLOAD=https://downloads.apache.org/nifi/${NIFI_VERSION}/${NIFI_TOOLKIT_ARCHIVE}
+NIFI_TOOLKIT_HOME=/usr/local/nifi-toolkit
 
 
 # Utility functions

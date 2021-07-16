@@ -7,3 +7,4 @@
 /vagrant/scripts/start-hive.sh		# Start hiveserver2 plus metastore service.
 /vagrant/scripts/start-hbase.sh		# Start HBase
 /vagrant/scripts/start-spark.sh		# Start Spark history server.
+/vagrant/scripts/start-nifi.sh      # Start NiFi
