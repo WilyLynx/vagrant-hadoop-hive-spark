@@ -30,6 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         node.vm.hostname = 'node1'
         node.vm.provision :shell, path: 'scripts/setup-ubuntu.sh'
         node.vm.provision :shell, path: 'scripts/setup-java.sh'
+        node.vm.provision :shell, path: 'scripts/setup-scala.sh'
         node.vm.provision :shell, path: 'scripts/setup-hadoop.sh'
         node.vm.provision :shell, path: 'scripts/setup-hive.sh'
         node.vm.provision :shell, path: 'scripts/setup-spark.sh'
@@ -41,6 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         #node.vm.provision :shell, path: 'scripts/setup-sqoop.sh'
         #node.vm.provision :shell, path: 'scripts/setup-zeppelin.sh'
         node.vm.provision :shell, path: 'scripts/setup-nifi.sh'
+        node.vm.provision :shell, path: 'scripts/setup-kafka.sh'
         node.vm.provision :shell, path: 'scripts/finalize-ubuntu.sh'
         node.vm.provision :shell, path: 'scripts/bootstrap.sh', run: 'always'
     end
