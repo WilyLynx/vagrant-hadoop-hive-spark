@@ -24,15 +24,11 @@ function installNifi {
 }
 
 function setupNifi {
-    echo "creating deafult user"
-    # cp -f $NIFI_RES_DIR/nifi.properties $NIFI_CONF
-    # sudo ${NIFI_TOOLKIT_HOME}/bin/tls-toolkit.sh standalone -n 0.0.0.0 -o ${NIFI_CONF} -O
-    # ${NIFI_HOME}/bin/nifi.sh set-single-user-credentials mini mini-big-data-nifi
-    # cp ${NIFI_CONF}/0.0.0.0/nifi.properties ${NIFI_CONF}
-    # cp ${NIFI_CONF}/0.0.0.0/keystore.jks ${NIFI_CONF}
-    # cp ${NIFI_CONF}/0.0.0.0/truststore.jks ${NIFI_CONF}
+    echo "Enable HTTP"
     sed -i 's/nifi.remote.input.secure=true/nifi.remote.input.secure=false/' $NIFI_CONF/nifi.properties
     sed -i 's/nifi.web.http.port=/nifi.web.http.port=9443/' $NIFI_CONF/nifi.properties
+    
+    echo "Disable HTTPS"
     sed -i 's/nifi.web.https.host=127.0.0.1/nifi.web.https.host=/' $NIFI_CONF/nifi.properties
     sed -i 's/nifi.web.https.port=8443/nifi.web.https.port=/' $NIFI_CONF/nifi.properties
 }
