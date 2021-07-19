@@ -15,6 +15,13 @@ JAVA_MYSQL_CONNECTOR_JAR=mysql-connector-java-${JAVA_MYSQL_CONNECTOR_VERSION}.ja
 # 
 JAVA_MYSQL_CONNECTOR_DOWNLOAD=https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/${JAVA_MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${JAVA_MYSQL_CONNECTOR_VERSION}.jar
 
+# Scala
+SCALA_RELEASE=scala-${SCALA_VERSION}
+SCALA_ARCHIVE=${SCALA_RELEASE}.tgz
+SCALA_MIRROR_DOWNLOAD=https://downloads.lightbend.com/scala/${SCALA_VERSION}/${SCALA_ARCHIVE}
+SCALA_HOME=/usr/local/scala
+SCALA_RES_DIR=/vagrant/resources/scala
+
 # hadoop
 HADOOP_PREFIX=/usr/local/hadoop
 HADOOP_CONF=$HADOOP_PREFIX/etc/hadoop
