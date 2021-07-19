@@ -112,6 +112,12 @@ NIFI_TOOLKIT_ARCHIVE=${NIFI_TOOLKIT_RELEASE}.tar.gz
 NIFI_TOOLKIT_MIRROR_DOWNLOAD=https://downloads.apache.org/nifi/${NIFI_VERSION}/${NIFI_TOOLKIT_ARCHIVE}
 NIFI_TOOLKIT_HOME=/usr/local/nifi-toolkit
 
+# Kafka
+KAFKA_RELEASE=kafka_2.12-${KAFKA_VERSION}
+KAFKA_ARCHIVE=${KAFKA_RELEASE}.tgz
+KAFKA_MIRROR_DOWNLOAD=https://downloads.apache.org/kafka/${KAFKA_VERSION}/${KAFKA_ARCHIVE}
+KAFKA_HOME=/usr/local/kafka
+
 
 # Utility functions
 function resourceExists {
