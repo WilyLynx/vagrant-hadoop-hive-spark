@@ -8,3 +8,4 @@
 /vagrant/scripts/start-hbase.sh		# Start HBase
 /vagrant/scripts/start-spark.sh		# Start Spark history server.
 /vagrant/scripts/start-nifi.sh      # Start NiFi
+/vagrant/scripts/start-flink.sh     # Start Flink

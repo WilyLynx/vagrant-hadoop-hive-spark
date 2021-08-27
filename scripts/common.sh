@@ -118,6 +118,12 @@ KAFKA_ARCHIVE=${KAFKA_RELEASE}.tgz
 KAFKA_MIRROR_DOWNLOAD=https://downloads.apache.org/kafka/${KAFKA_VERSION}/${KAFKA_ARCHIVE}
 KAFKA_HOME=/usr/local/kafka
 
+# Flink 
+FLINK_RELEASE=flink-${FLINK_VERSION}-bin-scala_2.12
+FLINK_ARCHIVE=${FLINK_RELEASE}.tgz
+FLINK_MIRROR_DOWNLOAD=https://downloads.apache.org/flink/flink-${FLINK_VERSION}/${FLINK_ARCHIVE}
+FLINK_HOME=/usr/local/flink
+
 
 # Utility functions
 function resourceExists {
