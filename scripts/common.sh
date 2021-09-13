@@ -124,6 +124,13 @@ FLINK_ARCHIVE=${FLINK_RELEASE}.tgz
 FLINK_MIRROR_DOWNLOAD=https://downloads.apache.org/flink/flink-${FLINK_VERSION}/${FLINK_ARCHIVE}
 FLINK_HOME=/usr/local/flink
 
+# Cassandra
+CASSANDRA_RELEASE=apache-cassandra-${CASSANDRA_VERSION}-bin
+CASSANDRA_ARCHIVE=${CASSANDRA_RELEASE}.tar.gz
+CASSANDRA_MIRROR_DOWNLOAD=https://downloads.apache.org/cassandra/${CASSANDRA_VERSION}/${CASSANDRA_ARCHIVE}
+CASSANDRA_HOME=/usr/local/cassandra
+CASSANDRA_RES_DIR=/vagrant/resources/cassandra
+
 
 # Utility functions
 function resourceExists {

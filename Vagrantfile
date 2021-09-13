@@ -45,6 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         node.vm.provision :shell, path: 'scripts/setup-nifi.sh'
         node.vm.provision :shell, path: 'scripts/setup-kafka.sh'
         node.vm.provision :shell, path: 'scripts/setup-flink.sh'
+        node.vm.provision :shell, path: 'scripts/setup-cassandra.sh'
         node.vm.provision :shell, path: 'scripts/finalize-ubuntu.sh'
         node.vm.provision :shell, path: 'scripts/bootstrap.sh', run: 'always'
     end
