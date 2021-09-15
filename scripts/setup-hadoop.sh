@@ -67,14 +67,6 @@ function setupHdfs {
     hdfs dfs -chmod -R 777 /var
 }
 
-function addHDFSUser {
-	echo "Adding hdfs user"
-	echo "U: hdfs"
-	echo "P: hdfs"
-	adduser hdfs --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
-	echo "hdfs:hdfs" | chpasswd
-}
-
 echo "setup hadoop"
 
 installHadoop
@@ -83,6 +75,5 @@ setupEnvVars
 formatHdfs
 startDaemons
 setupHdfs
-addHDFSUser
 
 echo "hadoop setup complete"

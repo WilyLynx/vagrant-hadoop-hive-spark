@@ -44,6 +44,14 @@ function setupUtilities {
     apt-get install -y curl apt-utils
 }
 
+function addUser () {
+	echo "Adding $1 user"
+	echo "U: $1"
+	echo "P: $1"
+	adduser $1 --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+	echo "$1:$1" | chpasswd
+}
+
 echo "setup ubuntu"
 
 echo "setup hosts file"
@@ -59,5 +67,12 @@ setupUtilities
 
 echo "setup swap daemon"
 setupSwap
+
+echo "Create additional super users"
+addUser hdfs
+usermod -aG sudo hdfs
+
+addUser spark
+usermod -aG sudo spark
 
 echo "ubuntu setup complete"
