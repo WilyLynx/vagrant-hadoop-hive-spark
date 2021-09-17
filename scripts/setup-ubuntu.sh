@@ -40,7 +40,14 @@ function setupUtilities {
     updatedb
     apt-get install -y ant
     apt-get install -y unzip
-    apt-get install -y python-minimal
+	apt-get install -y software-properties-common
+	add-apt-repository -y ppa:deadsnakes/ppa
+	apt-get update
+    apt-get install -y python3.9 python3.9-venv python3.9-dev
+	rm /usr/bin/python
+	ln -s /usr/bin/python3.9 /usr/bin/python
+	rm /usr/bin/python3
+	ln -s /usr/bin/python3.9 /usr/bin/python3
     apt-get install -y curl apt-utils
 }
 
