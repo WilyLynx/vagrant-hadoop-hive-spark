@@ -45,6 +45,26 @@ function runHiveServices {
     nohup hive --service hiveserver2 < /dev/null > /usr/local/hive/logs/hive_server2_`date +"%Y%m%d%H%M%S"`.log 2>&1 &
 }
 
+function createExampleTables{
+	echo "Create data folder"
+	mkdir /home/vagrant/data
+	hdfs dfs -mkdir /data
+
+	echo "Coping employees.csv"
+	gzip -dk /vagrant/data/employees.csv.gz
+	mv /vagrant/data/employees.csv /home/vagrant/data
+	hdfs dfs -put /home/vagrant/data/employees.csv /data
+
+	echo "Coping salaries.csv"
+	gzip -dk /vagrant/data/salaries.csv.gz
+	mv /vagrant/data/salaries.csv /home/vagrant/data
+	hdfs dfs -put /home/vagrant/data/salaries.csv /data
+
+	echo "Create Hive tables"
+	/usr/local/hive/bin/hive -f /vagrant/resources/hive/create_salaries.sql
+	/usr/local/hive/bin/hive -f /vagrant/resources/hive/create_employees.sql
+}
+
 echo "setup hive"
 
 installHive

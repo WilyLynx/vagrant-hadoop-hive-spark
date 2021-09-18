@@ -28,6 +28,11 @@
 *.sqlite
 *.netrwhist
 
+# Example data #
+######################
+!resources/hive/*.sql
+!data/*
+
 # Vagrant #
 ###########
 /.vagrant
