@@ -32,6 +32,7 @@
 ######################
 !resources/hive/*.sql
 !data/*
+!data/weather/*
 
 # Vagrant #
 ###########

@@ -67,6 +67,22 @@ function setupHdfs {
     hdfs dfs -chmod -R 777 /var
 }
 
+
+function createExampleData {
+	echo "Extract files"
+	mkdir /home/vagrant/data
+	mkdir /home/vagrant/data/weather
+	gzip -dk /vagrant/data/weather/*.csv.gz
+	mv /vagrant/data/weather/*.csv data/weather/
+
+	echo "Copy weather data"
+	hdfs dfs -mkdir /data
+	hdfs dfs -mkdir /data/weather
+
+	echo "Put data into HDFS"
+	hdfs dfs -put data/weather/* /data/weather
+}
+
 echo "setup hadoop"
 
 installHadoop
