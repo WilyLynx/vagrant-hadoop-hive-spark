@@ -23,3 +23,5 @@ echo "setup vim"
 setupVIM
 echo "setup netstat"
 setupNetStat
+echo "Cleanup data folder"
+rm -R /home/vagrant/data
