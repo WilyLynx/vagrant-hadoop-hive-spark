@@ -70,7 +70,7 @@ function setupHdfs {
 
 function createExampleData {
 	echo "Extract files"
-	mkdir /home/vagrant/data
+	mkdir /home/vagrant/data || true
 	mkdir /home/vagrant/data/weather
 	gzip -dk /vagrant/data/weather/*.csv.gz
 	mv /vagrant/data/weather/*.csv data/weather/
@@ -91,5 +91,6 @@ setupEnvVars
 formatHdfs
 startDaemons
 setupHdfs
+createExampleData
 
 echo "hadoop setup complete"

@@ -24,4 +24,4 @@ setupVIM
 echo "setup netstat"
 setupNetStat
 echo "Cleanup data folder"
-rm -R /home/vagrant/data
+rm -R /home/vagrant/data || true

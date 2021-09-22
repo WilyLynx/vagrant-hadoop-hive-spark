@@ -45,9 +45,9 @@ function runHiveServices {
     nohup hive --service hiveserver2 < /dev/null > /usr/local/hive/logs/hive_server2_`date +"%Y%m%d%H%M%S"`.log 2>&1 &
 }
 
-function createExampleTables{
+function createExampleTables {
 	echo "Create data folder"
-	mkdir /home/vagrant/data
+	mkdir /home/vagrant/data || true
 	hdfs dfs -mkdir /data
 
 	echo "Coping employees.csv"
@@ -71,5 +71,6 @@ installHive
 setupHive
 setupEnvVars
 runHiveServices
+createExampleTables
 
 echo "hive setup complete"
